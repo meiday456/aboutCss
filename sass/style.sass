@@ -3,6 +3,12 @@ $color-white : #fff
 $color-primary : #FFCD12
 $color-gray : #333
 
+$inner-width : 1100px
+$power-width : $inner-width - 200px
+
+@function add($num1 , $num2)
+  @return $num1 + $num2
+
 .btn
   width : 130px
   padding : 10px
@@ -30,7 +36,7 @@ $color-gray : #333
 
 
 .inner
-  width: 1100px
+  width: $inner-width
   margin: 0 auto
   position: relative
 
@@ -38,9 +44,14 @@ $color-gray : #333
   @extend .inner
   padding : 10px 20px
 
+.power
+  @extend .inner
+  width : $power-width
+
+
 //bem
 .item
-  width : 100px
+  width : add(100,100) + px
   padding : 10px 20px
   font-family: sans-self
 
@@ -54,4 +65,6 @@ $color-gray : #333
 
   &--active
     border : 1px solid $color-gray
+
+
 

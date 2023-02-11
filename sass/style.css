@@ -24,7 +24,7 @@
   color: #333;
 }
 
-.inner, .hero {
+.inner, .power, .hero {
   width: 1100px;
   margin: 0 auto;
   position: relative;
@@ -34,8 +34,12 @@
   padding: 10px 20px;
 }
 
+.power {
+  width: 900px;
+}
+
 .item {
-  width: 100px;
+  width: 200px;
   padding: 10px 20px;
   font-family: sans-self;
 }
