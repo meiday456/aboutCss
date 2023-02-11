@@ -1,0 +1,26 @@
+$color-black : #333
+$color-white : #fff
+.btn
+  width : 130px
+  padding : 10px
+  border : 2px solid $color-black
+  color : $color-black
+  font-size : 16px
+  font-weight: 700
+  text-align: center
+  cursor: pointer
+  box-sizing: border-box
+  display: block
+  transition: .4s
+
+  &:hover
+    background-color: $color-black
+    color: $color-white
+
+  .btn--reverse
+    background-color: $color-black
+    color : $color-white
+
+    &:hover
+      background-color: transparent
+      color: $color-black
