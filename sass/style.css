@@ -24,4 +24,32 @@
   color: #333;
 }
 
+.inner, .hero {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero {
+  padding: 10px 20px;
+}
+
+.item {
+  width: 100px;
+  padding: 10px 20px;
+  font-family: sans-self;
+}
+.item__name {
+  color: #FFCD12;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.item__title {
+  color: #fff;
+  font-size: 30px;
+}
+.item--active {
+  border: 1px solid #333;
+}
+
 /*# sourceMappingURL=style.css.map */

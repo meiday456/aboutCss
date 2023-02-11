@@ -1,5 +1,8 @@
 $color-black : #333
 $color-white : #fff
+$color-primary : #FFCD12
+$color-gray : #333
+
 .btn
   width : 130px
   padding : 10px
@@ -24,3 +27,31 @@ $color-white : #fff
     &:hover
       background-color: transparent
       color: $color-black
+
+
+.inner
+  width: 1100px
+  margin: 0 auto
+  position: relative
+
+.hero
+  @extend .inner
+  padding : 10px 20px
+
+//bem
+.item
+  width : 100px
+  padding : 10px 20px
+  font-family: sans-self
+
+  &__name
+    color : $color-primary
+    font-size: 20px
+    border-radius: 10px
+  &__title
+    color : $color-white
+    font-size : 30px
+
+  &--active
+    border : 1px solid $color-gray
+
