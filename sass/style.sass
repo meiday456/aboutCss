@@ -1,20 +1,29 @@
-$color-black : #333
-$color-white : #fff
-$color-primary : #FFCD12
-$color-gray : #333
+@use "color"
+@import "outher"
 
-$inner-width : 1100px
-$power-width : $inner-width - 200px
+
+$color-black: #333
+$color-white: #fff
+$color-primary: #FFCD12
+$color-gray: #333
+
+$inner-width: 1100px
+$power-width: $inner-width - 200px
+
+@mixin block($color)
+  position: relative
+  display: block
+  border: 1px solid $color
 
 @function add($num1 , $num2)
   @return $num1 + $num2
 
 .btn
-  width : 130px
-  padding : 10px
-  border : 2px solid $color-black
-  color : $color-black
-  font-size : 16px
+  width: 130px
+  padding: 10px
+  border: 2px solid $color-black
+  color: $color-black
+  font-size: 16px
   font-weight: 700
   text-align: center
   cursor: pointer
@@ -28,7 +37,7 @@ $power-width : $inner-width - 200px
 
   .btn--reverse
     background-color: $color-black
-    color : $color-white
+    color: $color-white
 
     &:hover
       background-color: transparent
@@ -42,29 +51,37 @@ $power-width : $inner-width - 200px
 
 .hero
   @extend .inner
-  padding : 10px 20px
+  padding: 10px 20px
 
 .power
   @extend .inner
-  width : $power-width
+  width: $power-width
+
+.info
+  @include block($color-gray)
 
 
 //bem
 .item
-  width : add(100,100) + px
-  padding : 10px 20px
+  width: add(100,100) + px
+  padding: 10px 20px
   font-family: sans-self
 
   &__name
-    color : $color-primary
+    color: $color-primary
     font-size: 20px
     border-radius: 10px
+
   &__title
-    color : $color-white
-    font-size : 30px
+    color: $color-white
+    font-size: 30px
 
   &--active
-    border : 1px solid $color-gray
+    border: 1px solid $color-gray
+
+  &--disable
+    color: color.$color-brown
+
 
 
 

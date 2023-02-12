@@ -38,6 +38,12 @@
   width: 900px;
 }
 
+.info {
+  position: relative;
+  display: block;
+  border: 1px solid #333;
+}
+
 .item {
   width: 200px;
   padding: 10px 20px;
@@ -54,6 +60,9 @@
 }
 .item--active {
   border: 1px solid #333;
+}
+.item--disable {
+  color: #600600;
 }
 
 /*# sourceMappingURL=style.css.map */
