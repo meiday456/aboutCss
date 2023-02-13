@@ -1,33 +1,18 @@
 /** @jsxImportSource @emotion/react */
-import React, { ChangeEvent, FormEvent, Suspense, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import styled from "@emotion/styled";
 import BookSearchForm from "../component/BookSearchForm";
 import axios from "axios";
 import Loader from "../component/Loader";
 import BookList from "../component/BookList";
+import { Books } from "../interface/Books";
+import {
+  Container,
+  Header,
+  HeaderContainer,
+  LogoText,
+} from "../component/Shared";
 
-const Header = styled.header`
-  border-bottom: 1px solid gray;
-`;
-
-const Container = styled.div`
-  max-width: 960px;
-  padding: 15px;
-  margin: 0 auto;
-`;
-
-const HeaderContainer = styled(Container)`
-  display: flex;
-  align-items: center;
-  @media (max-width: 778px) {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 10rem;
-  }
-`;
-const LogoText = styled.div`
-  margin: 0;
-`;
 const HeaderSearchForm = styled.div`
   margin-left: auto;
   @media (max-width: 778px) {
@@ -37,19 +22,22 @@ const HeaderSearchForm = styled.div`
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [books, setBooks] = useState(null);
+  const [books, setBooks] = useState<Books | null>(null);
+  const [isLoading, setLoading] = useState(false);
 
   const API_BASE_URL = `https://www.googleapis.com/books`;
 
   const fetchBooks = async () => {
+    setLoading(true);
     try {
-      const { data }: any = axios.get(
+      const { data }: any = await axios.get(
         `${API_BASE_URL}/v1/volumes?q=${searchTerm}`
       );
       setBooks(data);
     } catch (error) {
       console.error(error);
     } finally {
+      setLoading(false);
     }
   };
 
@@ -72,9 +60,7 @@ const SearchPage = () => {
         </HeaderContainer>
       </Header>
       <Container>
-        <Suspense fallback={<Loader />}>
-          <BookList />
-        </Suspense>
+        {isLoading ? <Loader /> : <BookList books={books} />}
       </Container>
     </>
   );
