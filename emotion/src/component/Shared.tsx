@@ -13,12 +13,21 @@ export const Container = styled.div`
 export const HeaderContainer = styled(Container)`
   display: flex;
   align-items: center;
-  @media (max-width: 778px) {
+  @media (max-width: 1200px) {
+    justify-content: space-between;
+  }
+
+  @media (max-width: 600px) {
     flex-direction: column;
     align-items: flex-start;
-    padding: 15px 10rem;
   }
 `;
 export const LogoText = styled.div`
   margin: 0;
+`;
+
+export const Thumbnail = styled.img`
+  display: block;
+  height: calc((250px * 3) / 4);
+  box-shadow: 10px 5px 5px #8c8c8c;
 `;

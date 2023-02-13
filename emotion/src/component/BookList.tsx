@@ -2,6 +2,14 @@
 import React from "react";
 import { Books as BookInfo } from "../interface/Books";
 import Book from "./Book";
+import styled from "@emotion/styled";
+
+const ListArea = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+`;
 
 const BookList = ({ books }: { books: BookInfo | null }) => {
   if (!books) {
@@ -10,11 +18,11 @@ const BookList = ({ books }: { books: BookInfo | null }) => {
     return <h1>해당 하는 책이없습니다.</h1>;
   } else {
     return (
-      <ul>
+      <ListArea>
         {books.items.map((book, index) => {
           return <Book info={book} key={index}></Book>;
         })}
-      </ul>
+      </ListArea>
     );
   }
 };

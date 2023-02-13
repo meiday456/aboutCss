@@ -15,7 +15,7 @@ import {
 
 const HeaderSearchForm = styled.div`
   margin-left: auto;
-  @media (max-width: 778px) {
+  @media (max-width: 1200px) {
     margin-left: 0;
   }
 `;
@@ -48,6 +48,8 @@ const SearchPage = () => {
     e.preventDefault();
     await fetchBooks();
   };
+
+  console.log(books);
 
   return (
     <>

@@ -6,6 +6,7 @@ import { css, Global, ThemeProvider, useTheme } from "@emotion/react";
 import SearchPage from "./pages/SearchPage";
 import BookDetailPage from "./pages/BookDetailPage";
 import Footer from "./component/Footer";
+import reset from "emotion-reset";
 
 import { Theme, themeDark, themeLight } from "./component/Theme";
 import { ThemeType } from "./interface/Theme";
@@ -16,6 +17,7 @@ const Layout = ({ isDark, setIsDark }: ThemeType) => {
     <>
       <Global
         styles={css`
+          ${reset}
           body {
             background-color: ${theme.background};
             color: ${theme.text};

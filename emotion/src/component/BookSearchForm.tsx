@@ -12,7 +12,7 @@ const Input = styled.input`
   &.active {
     border-color: #85b7d9;
   }
-  @media (max-width: 778px) {
+  @media (max-width: 1200px) {
     margin-top: 10px;
   }
 `;
