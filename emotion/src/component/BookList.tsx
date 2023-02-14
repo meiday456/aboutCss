@@ -11,6 +11,8 @@ const ListArea = styled.div`
   gap: 10px;
 `;
 
+const TextArea = styled.div``;
+
 const BookList = ({ books }: { books: BookInfo | null }) => {
   if (!books) {
     return <h1>책을 검색해 보세요.</h1>;

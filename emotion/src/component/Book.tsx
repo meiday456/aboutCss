@@ -7,11 +7,6 @@ import { Thumbnail } from "./Shared";
 const ItemArea = styled.div`
   width: 250px;
   height: calc((250px * 3) / 2);
-
-  &:hover {
-    background-color: #ababab;
-    border-radius: 10px;
-  }
 `;
 
 const ThumbnailIml = styled(Thumbnail)`
@@ -31,21 +26,31 @@ const Title = styled.h3`
   //position: absolute;
 `;
 
+const StyledLink = styled(Link)`
+  display: block;
+  &:hover {
+    background-color: #ababab;
+    border-radius: 10px;
+  }
+`;
+
 const Book = ({ info }: { info: Item }) => {
   return (
-    <ItemArea>
-      <ThumbnailIml
-        src={`http://books.google.com/books/content?id=${info.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}
-        alt={`${info.volumeInfo.title}`}
-      />
-      <Info>
-        <Link to={`/book/${info.id}`}>
+    <StyledLink to={`/book/${info.id}`}>
+      <ItemArea>
+        <ThumbnailIml
+          src={`http://books.google.com/books/content?id=${info.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}
+          alt={`${info.volumeInfo.title}`}
+        />
+        <Info>
+          {/*<Link to={`/book/${info.id}`}>*/}
           <Title>{info.volumeInfo.title}</Title>
-        </Link>
-        <p>{info.volumeInfo.authors.join(",")}</p>
-        <p>{info.volumeInfo.publishedDate}</p>
-      </Info>
-    </ItemArea>
+          {/*</Link>*/}
+          <p>{info.volumeInfo.authors?.join(",")}</p>
+          <p>{info.volumeInfo.publishedDate}</p>
+        </Info>
+      </ItemArea>
+    </StyledLink>
   );
 };
 

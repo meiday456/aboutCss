@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
-import "./App.css";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { css, Global, ThemeProvider, useTheme } from "@emotion/react";
 import SearchPage from "./pages/SearchPage";
@@ -19,6 +18,8 @@ const Layout = ({ isDark, setIsDark }: ThemeType) => {
         styles={css`
           ${reset}
           body {
+            font-family: "Montserrat", sans-serif;
+            font-family: "Noto Sans KR", sans-serif;
             background-color: ${theme.background};
             color: ${theme.text};
             transition-duration: 0.2s;

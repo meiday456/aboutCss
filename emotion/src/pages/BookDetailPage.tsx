@@ -11,6 +11,11 @@ import {
 } from "../component/Shared";
 import Loader from "../component/Loader";
 import BookDetail from "../component/BookDetail";
+import styled from "@emotion/styled";
+
+const ContainerImpl = styled(Container)`
+  text-align: initial;
+`;
 
 const BookDetailPage = () => {
   const { bookId } = useParams();
@@ -44,9 +49,9 @@ const BookDetailPage = () => {
           </Link>
         </HeaderContainer>
       </Header>
-      <Container>
+      <ContainerImpl>
         {isLoading ? <Loader /> : info && <BookDetail detail={info!} />}
-      </Container>
+      </ContainerImpl>
     </>
   );
 };

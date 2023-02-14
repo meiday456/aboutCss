@@ -33,7 +33,7 @@ const BookDetail = ({ detail }: { detail: BookDetailInfo }) => {
             </h3>
             <p>
               <strong>저자 :</strong>
-              {detail.volumeInfo.authors.join(",")}
+              {detail.volumeInfo.authors?.join(",")}
             </p>
           </div>
         </MainInfo>

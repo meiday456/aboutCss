@@ -8,6 +8,7 @@ export const Container = styled.div`
   max-width: 960px;
   padding: 15px;
   margin: 0 auto;
+  text-align: center;
 `;
 
 export const HeaderContainer = styled(Container)`
@@ -23,6 +24,7 @@ export const HeaderContainer = styled(Container)`
   }
 `;
 export const LogoText = styled.div`
+  font-size: 22px;
   margin: 0;
 `;
 
